@@ -1,0 +1,25 @@
+{
+  "name": "ozypy",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=7.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter frontend run dev",
+    "build": "pnpm --filter frontend run build",
+    "start": "pnpm --filter frontend run start",
+    "test": "pnpm --filter frontend run test",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+    "build:prod": "pnpm run lint:fix && pnpm run build",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "5.6.3",
+    "husky": "^8.0.3"
+  },
+  "dependencies": {
+    "react-scripts": "5.0.1"
+  }
+}
